@@ -16,6 +16,13 @@ interface IBosonAccountEvents {
         BosonTypes.AuthToken authToken,
         address indexed executedBy
     );
+    // SellerUpdated is no longer used since v2.1.0, kept for compatibility with v2.0.0
+    event SellerUpdated(
+        uint256 indexed sellerId,
+        BosonTypes.Seller seller,
+        BosonTypes.AuthToken authToken,
+        address indexed executedBy
+    );
     event SellerUpdatePending(
         uint256 indexed sellerId,
         BosonTypes.Seller pendingSeller,
@@ -38,6 +45,12 @@ interface IBosonAccountEvents {
         BosonTypes.DisputeResolver disputeResolver,
         BosonTypes.DisputeResolverFee[] disputeResolverFees,
         uint256[] sellerAllowList,
+        address indexed executedBy
+    );
+    // DisputeResolverUpdated is no longer used since v2.1.0, kept for compatibility with v2.0.0
+    event DisputeResolverUpdated(
+        uint256 indexed disputeResolverId,
+        BosonTypes.DisputeResolver disputeResolver,
         address indexed executedBy
     );
     event DisputeResolverUpdatePending(
